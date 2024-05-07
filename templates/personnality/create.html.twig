@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Votre personnality {% endblock %}
+
+{% block body %}
+    <div class="part">
+        {{ form_start(form )}}
+        {{form_row(form.music)}}
+
+        {{form_row(form.movie)}}
+
+        {{form_row(form.book)}}
+
+        {{form_row(form.favorite_activity)}}
+
+         <button type="submit" class="btn btn-success mt-4">
+        <i class="fas fa-save"> Suivant</i>
+        </button>
+
+        {{ form_end(form)}}
+    </div>
+{% endblock %}

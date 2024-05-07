@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+<div class="align-middle">
+    <div class="name">
+        <h4>
+            {{ user.name}} |
+
+            {% if user.physical.gender == true  %}
+            <span class="badge rounded-pill bg-primary">Femme</span>
+            {% else %}
+            <span class="badge rounded-pill bg-primary">Homme</span>
+            {% endif %}
+        </h4>
+        <p>{% if user.physical.gender == true  %}
+                née le {{user.physical.birthday|date}}
+            {% else %}
+                né le {{user.physical.birthday|date}}
+            {% endif %}
+        </p>
+    </div>
+    <hr>
+
+    <p class="card-text"> {{ user.description }}</p>
+
+    <hr>
+    <div class="physical">
+        <p><b>Taille</b> : {{ user.physical.height}} cm </p>
+        <p><b>Poids</b>  {{ user.physical.weight }} kg</p>
+
+        <p><b>Couleur des cheveux</b> : {{ user.physical.hairColor }}</p>
+        <p><b>Couleur des yeux</b> : {{ user.physical.eyesColor }}</p>
+
+    </div>
+
+    <hr>
+    <div class="personnality">
+        <p><b>Musique préférée</b> : {{ user.personnality.music}} </p>
+        <p><b>Film préféré</b> : {{ user.personnality.movie }} </p>
+
+        <p><b>Livre préféré</b> : {{ user.personnality.book }}</p>
+        <p><b>Activité préférée</b> : {{ user.personnality.favoriteActivity }}</p>
+
+    </div>
+    <hr>
+
+
+</div>
+
+
+
+
+<a href="{{ '/user/edit' }}" class="btn btn-primary">Modifier Pseudo/Description</a>
+<a href="{{path('physical_edit', {'id' : user.physical.id})}}" class="btn btn-primary">Modifier la partie Physique</a>
+    
+    <a href="{{path('personnality_edit', {'id' : user.personnality.id})}}" class="btn btn-primary">Modifier la partie Personnalité</a>
+{% endblock %}
+

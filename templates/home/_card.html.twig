@@ -1,0 +1,21 @@
+ <div class="card" style="width: 18rem;-midle">
+     <i class="fas fa-user align-middle" style="font-size:6em;"></i>
+     <div class="card-body">
+         <h5 class="card-title">{{ u.name }}
+             {% if u.physical.gender == true %}
+
+             <span class="badge rounded-pill bg-primary"> Femme </span>
+             {% else %}
+             <span class="badge rounded-pill bg-primary"> Homme </span>
+             {% endif %}
+
+         </h5>
+         <p class="card-text">{{ u.description }}</p>
+
+         {% if app.user %}
+         <a href="{{ path('user_show', {'id' : u.id}) }}" class="btn btn-primary">Voir son profil ? </a>
+         {% else %}
+         <a href="{{ path('app_login', {'id' : u.id}) }}" class="btn btn-primary">Voir son profil ? </a>
+         {% endif %}
+     </div>
+ </div>

@@ -1,0 +1,17 @@
+<div class="card mt-5 align-middle">
+    <div class="icone"><i class="fas fa-user align-middle" style="font-size:6em;"></i></div>
+    <div class="card-body">
+        <h5 class="card-title">{{user.name}}</h5>
+        <p> {% if user.physical.gender == true %}
+            <span class="badge rounded-pill bg-primary"> Femme </span>
+            {% else %}
+            <span class="badge rounded-pill bg-primary"> Homme </span>
+            {% endif %}</p>
+        <div class="card-title">
+            {{user.description}}
+        </div>
+        <div class="carde-title">
+            <p>J'aime ce type de musique : {{user.personnality.music}}</p>
+        </div>
+    </div>
+</div>

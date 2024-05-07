@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer mon profil {% endblock %}
+
+{% block body %}
+
+<div class="section-personnality">
+<div class="form">
+    <h3 class="align-middle">Personnalité</h3>
+    {{form_start(form)}}
+    {{form_errors(form)}}
+
+    {{ form_row(form.music) }}
+    {{ form_row(form.movie) }}
+    {{ form_row(form.book) }}
+    {{ form_row(form.favorite_activity) }}
+
+
+    <button type="submit" class="btn btn-primary">Valider </button>
+    {{form_end(form) }}
+</div>
+<hr>
+
+{% endblock %}

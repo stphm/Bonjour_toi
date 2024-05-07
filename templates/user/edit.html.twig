@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer mon profil {% endblock %}
+
+{% block body %}
+<p> Mes informations :</p>
+<div class="form">
+    {{form_start(form)}}
+    {{form_errors(form)}}
+
+    {{form_row(form.name)}}
+
+    {{form_row(form.description) }}
+
+    <button type="submit" class="btn btn-secondary mt-4">
+        Valider
+    </button>
+    {{form_end(form)}}
+
+    
+</div>
+<hr>
+
+{% endblock %}

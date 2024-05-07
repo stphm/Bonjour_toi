@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+Profile de : {{ user.name}}
+{% endblock %}
+
+{% block body %}
+<section>
+    <h1>{{ user.name }}</h1>
+    <div class="information">
+        <table class="table table-hover">
+
+            <thead>
+                <th scope="col">date de naissance</th>
+                <th scope="col">sexe </th>
+                <th scope="col">taille (cm)</th>
+                <th scope="col">couleur des cheveux </th>
+                <th scope="col">couleurs des yeux </th>
+                <th scope="col">poids (Kg)</th>
+            </thead>
+            <tbody>
+                <tr class="table-active table-primary">
+                    <th scope="row">{{ user.physical.birthday|date }}</th>
+                    {% if user.physical.gender == true %}
+                    <th>femme</th>
+                    {% else %}
+                        <th>Homme</th>
+                    {% endif %}
+                    <th>{{ user.physical.height }}</th>
+                    <th>{{ user.physical.hairColor }}</th>
+                    <th>{{ user.physical.eyesColor }}</th>
+                    <th>{{ user.physical.weight }}</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Musique préférée : <b> {{user.personnality.music}} </b> </p>
+        <p>Film préféré : <b> {{user.personnality.movie}} </b> </p>
+        <p>Livre préféré : <b> {{user.personnality.book}} </b> </p>
+        <p>Activitée préférée : <b> {{user.personnality.favoriteActivity}} </b> </p>
+    </div>
+</section>
+{% endblock %}

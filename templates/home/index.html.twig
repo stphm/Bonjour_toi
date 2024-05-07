@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bonjour Toi{% endblock %}
+
+{% block body %}
+
+
+<h1>Bonjour Toi ! Ici, on ne cherche pas l’amour sur notre site de rencontre, on le Trouve </h1>
+
+
+<div class="row">
+    {% for u in users %}
+        {% include "home/_card.html.twig" %}
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

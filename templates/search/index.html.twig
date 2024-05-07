@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+Filtrer
+{% endblock %}
+
+{% block body %}
+<h1>Filtrer </h1>
+    {% include "search/_form.html.twig" %}
+<hr>
+
+<h3>Mes résultats</h3>
+
+{% for user in users %}
+    {% include "search/_card.html.twig" %}
+{% endfor %}
+{% endblock %}
